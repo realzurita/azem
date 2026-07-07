@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros — Azem | Internet no debería ser un lujo</title>
+<meta name="description" content="Somos un equipo joven de Gran Canaria con una idea fija: que tener una web que vende deje de ser un privilegio de los que pueden pagar miles de euros.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/assets/cookieconsent/cookie-azem.css">
+<style>
+:root{
+  --bg:#0A0E1A;--surface:#101625;--surface-2:#151D30;
+  --line:rgba(237,241,247,.08);--text:#EDF1F7;--muted:#98A3B8;
+  --blue:#3E7BFF;--blue-soft:rgba(62,123,255,.14);
+  --yellow:#FFD23F;--yellow-soft:rgba(255,210,63,.12);
+  --red:#FF5A5F;
+  --radius:16px;
+  --font-display:"Archivo",sans-serif;--font-body:"Hanken Grotesk",sans-serif;--font-mono:"IBM Plex Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--yellow);color:#0A0E1A}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
+h1,h2,h3{font-family:var(--font-display);font-variation-settings:"wdth" 118;line-height:1.06;letter-spacing:-.01em}
+h1{font-weight:850;font-size:clamp(2.2rem,8vw,4rem)}
+h2{font-weight:800;font-size:clamp(1.6rem,5vw,2.4rem)}
+h3{font-weight:700;font-size:1.12rem;font-variation-settings:"wdth" 110}
+.sub{color:var(--muted);font-size:clamp(1rem,2.5vw,1.15rem);max-width:56ch}
+section{padding:56px 0}
+@media(min-width:768px){section{padding:84px 0}}
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,14,26,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--font-display);font-variation-settings:"wdth" 125;font-weight:850;font-size:1.15rem;letter-spacing:-.02em}
+.logo em{font-style:normal;color:var(--yellow)}
+.nav-links{display:none;gap:28px;font-size:.92rem;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.act{color:var(--text)}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:.95rem;padding:12px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn-wa{background:var(--yellow);color:#0A0E1A}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,210,63,.25)}
+.nav .btn{padding:9px 18px;font-size:.88rem}
+.burger{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1px solid var(--line);border-radius:10px;cursor:pointer;padding:0}
+.burger span{display:block;width:16px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s ease}
+.burger.open span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.burger.open span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+@media(min-width:768px){.burger{display:none}}
+.mmenu{position:fixed;top:64px;left:0;right:0;bottom:0;z-index:49;background:rgba(10,14,26,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:26px 20px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease}
+.mmenu.open{opacity:1;pointer-events:auto;transform:none}
+.mmenu a{font-family:var(--font-display);font-variation-settings:"wdth" 112;font-weight:800;font-size:1.55rem;padding:15px 4px;border-bottom:1px solid var(--line)}
+.mmenu a.act{color:var(--blue)}
+.mmenu .btn-wa{margin-top:24px;align-self:flex-start;font-size:1rem;padding:14px 26px;border-bottom:none}
+body.menu-lock{overflow:hidden}
+@media(min-width:768px){.mmenu{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{padding:60px 0 48px;position:relative;text-align:center}
+@media(min-width:900px){.hero{padding:96px 0 68px}}
+.hero h1{max-width:16ch;margin:16px auto 0}
+.hero h1 .hl{color:var(--yellow)}
+.hero .sub{margin:20px auto 0}
+.hero-glow{position:absolute;inset:auto auto 0 50%;transform:translateX(-50%);width:min(900px,100vw);height:420px;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at center,rgba(255,210,63,.10),transparent 65%)}
+
+/* ---------- CONTADORES DE PRECIO ---------- */
+.duel{display:grid;gap:16px;max-width:820px;margin:0 auto}
+@media(min-width:700px){.duel{grid-template-columns:1fr 1fr;gap:20px}}
+.duel-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;text-align:center;overflow:hidden}
+.duel-card.bad{border-color:rgba(255,90,95,.3)}
+.duel-card.good{border-color:rgba(255,210,63,.4)}
+.duel-label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.duel-price{font-family:var(--font-display);font-variation-settings:"wdth" 115;font-weight:850;font-size:clamp(2.4rem,9vw,3.4rem);line-height:1;margin:14px 0 6px;font-variant-numeric:tabular-nums}
+.duel-card.bad .duel-price{color:var(--red)}
+.duel-card.good .duel-price{color:var(--yellow)}
+.duel-note{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.duel-card.bad .duel-note{color:var(--red);opacity:.85}
+.duel-note .dots::after{content:"";animation:dots 1.4s steps(4,end) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+.stamp{
+  position:absolute;top:16px;right:-38px;transform:rotate(35deg) scale(0);
+  background:var(--yellow);color:#0A0E1A;
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;
+  padding:6px 44px;transition:transform .35s cubic-bezier(.2,1.6,.4,1);
+}
+.stamp.on{transform:rotate(35deg) scale(1)}
+.duel-foot{text-align:center;margin-top:18px;font-size:.9rem;color:var(--muted);max-width:52ch;margin-left:auto;margin-right:auto}
+
+/* ---------- MANIFIESTO ---------- */
+.mani{max-width:820px;margin:0 auto;display:grid;gap:14px}
+.mani-item{display:flex;gap:18px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.mani-num{font-family:var(--font-mono);font-size:12px;color:var(--blue);flex:none;padding-top:4px}
+.mani-item h3{margin-bottom:6px}
+.mani-item p{color:var(--muted);font-size:.93rem}
+
+/* ---------- INTERRUPTOR ---------- */
+.switchbox{max-width:820px;margin:0 auto}
+.switch-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.switch-label{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.05em;color:var(--muted);transition:color .2s ease;cursor:pointer;user-select:none}
+.switch-label.on{color:var(--text)}
+.toggle{position:relative;width:58px;height:30px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);cursor:pointer;flex:none;padding:0}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--red);transition:transform .25s ease,background .25s ease}
+.toggle.on::after{transform:translateX(28px);background:var(--yellow)}
+.flip-list{display:grid;gap:12px}
+.flip{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:center}
+.flip-ico{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:rgba(255,90,95,.12)}
+.flip.mode-good .flip-ico{background:var(--yellow-soft)}
+.flip-txt{font-size:.97rem;color:#C9D2E0;animation:flipIn .3s ease}
+.flip.mode-good .flip-txt{color:var(--text)}
+@keyframes flipIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* ---------- HISTORIA ---------- */
+.story{max-width:720px;margin:0 auto}
+.story p{margin-bottom:18px;color:#C9D2E0;font-size:clamp(1rem,2.6vw,1.1rem)}
+.story strong{color:var(--text)}
+.story .big{font-family:var(--font-display);font-variation-settings:"wdth" 112;font-weight:800;font-size:clamp(1.25rem,4vw,1.6rem);line-height:1.3;color:var(--text);margin:30px 0;padding-left:20px;border-left:3px solid var(--yellow)}
+
+/* ---------- COMPROMISOS ---------- */
+.pledges{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:820px;margin:0 auto}
+@media(min-width:768px){.pledges{grid-template-columns:repeat(4,1fr)}}
+.pledge{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 14px;text-align:center}
+.pledge-n{font-family:var(--font-display);font-variation-settings:"wdth" 115;font-weight:850;font-size:clamp(1.7rem,6vw,2.3rem);color:var(--blue);font-variant-numeric:tabular-nums}
+.pledge-n small{font-size:.55em;font-weight:800}
+.pledge:nth-child(2) .pledge-n,.pledge:nth-child(4) .pledge-n{color:var(--yellow)}
+.pledge-t{font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;color:var(--muted);margin-top:6px}
+
+/* ---------- CTA FINAL ---------- */
+.final{background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:20px;padding:44px 24px;text-align:center;position:relative;overflow:hidden}
+@media(min-width:768px){.final{padding:64px 40px}}
+.final::before{content:"";position:absolute;inset:auto auto -120px 50%;transform:translateX(-50%);width:520px;height:260px;pointer-events:none;background:radial-gradient(ellipse at center,rgba(255,210,63,.14),transparent 65%)}
+.final h2{max-width:22ch;margin:14px auto 0}
+.final .sub{margin:16px auto 28px}
+.final .fine{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:18px}
+
+/* ---------- FLOTANTE WHATSAPP ---------- */
+.wa-float{position:fixed;right:max(18px, env(safe-area-inset-right));bottom:max(20px, env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--yellow);color:#0A0E1A;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(255,210,63,.35),0 2px 8px rgba(0,0,0,.4);opacity:0;transform:translateY(16px) scale(.85);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.wa-float.on{opacity:1;transform:none;pointer-events:auto}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px}
+@media(min-width:768px){.wa-float{width:62px;height:62px;right:26px;bottom:28px}.wa-float svg{width:32px;height:32px}}
+
+footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:14px 24px}
+.foot-links a:hover{color:var(--text)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/">az<em>em</em></a>
+    <div class="nav-links">
+      <a href="/">Inicio</a>
+      <a href="/#planes">Planes</a>
+      <a href="/servicios/">Complementos</a>
+      <a href="/blog/">Blog</a>
+      <a href="/nosotros/" class="act">Nosotros</a>
+      <a href="/#faq">Dudas</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+        WhatsApp
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="/">Inicio</a>
+  <a href="/#planes">Planes</a>
+  <a href="/servicios/">Complementos</a>
+  <a href="/blog/">Blog</a>
+  <a href="/nosotros/" class="act">Nosotros</a>
+  <a href="/#faq">Dudas</a>
+  <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+</div>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center">Nosotros · Manifiesto</span>
+    <h1>Tener una web que vende <span class="hl">no debería ser un privilegio.</span></h1>
+    <p class="sub">Somos un equipo joven de Gran Canaria con una obsesión: que el bar de tu esquina tenga la misma tecnología que una gran cadena. Sin hipotecarse para pagarla.</p>
+  </div>
+</header>
+
+<!-- ============ EL DUELO DE PRECIOS ============ -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="duel rv" id="duel">
+      <div class="duel-card bad">
+        <span class="duel-label">Web de agencia tradicional</span>
+        <div class="duel-price"><span id="priceBad">0</span> €</div>
+        <span class="duel-note"><span class="dots">y subiendo</span></span>
+      </div>
+      <div class="duel-card good">
+        <span class="stamp" id="stamp">TODO INCLUIDO</span>
+        <span class="duel-label">Tu web con Azem</span>
+        <div class="duel-price"><span id="priceGood">0</span> €</div>
+        <span class="duel-note">de alta · precio cerrado</span>
+      </div>
+    </div>
+    <p class="duel-foot rv">Presupuestos que «dependen», extras que aparecen después, mantenimientos misteriosos. Nosotros hacemos lo contrario: un precio, dicho a la primera, que no crece por el camino.</p>
+  </div>
+</section>
+
+<!-- ============ HISTORIA ============ -->
+<section style="padding-top:20px">
+  <div class="wrap story">
+    <div class="cat-head rv" style="margin-bottom:24px">
+      <span class="eyebrow">Por qué existe Azem</span>
+    </div>
+    <p class="rv">Esto empezó con un cabreo. Veíamos negocios buenos — de los que llevan años haciendo las cosas bien — que eran <strong>invisibles en Google</strong>, mientras su competencia les quitaba clientes solo por aparecer primero.</p>
+    <p class="rv">¿Y las soluciones que les ofrecían? Dos: pagar miles de euros a una agencia que habla en jerga y tarda meses, o pelearse un domingo con una plataforma de «hazlo tú mismo» que acaba en una web que da penita.</p>
+    <p class="big rv">Nos pareció injusto. Así que decidimos romper el mercado: tecnología de empresa grande, a precio de negocio de barrio.</p>
+    <p class="rv">¿El truco? No hay truco: <strong>automatizamos todo lo que una agencia clásica hace a mano</strong> — y esa diferencia de coste te la quedas tú. Nosotros ponemos el criterio, la estrategia y la cara. Las máquinas hacen el trabajo pesado.</p>
+    <p class="rv">Somos jóvenes, somos de aquí, y nos jugamos el nombre en cada web que entregamos. Tu negocio no es un ticket en nuestro sistema: es nuestro vecino, y en una isla las cosas mal hechas se saben rápido.</p>
+  </div>
+</section>
+
+<!-- ============ INTERRUPTOR ============ -->
+<section style="padding-top:12px">
+  <div class="wrap switchbox">
+    <div class="cat-head rv" style="text-align:center;margin-bottom:22px">
+      <span class="eyebrow" style="justify-content:center">Compruébalo tú mismo</span>
+      <h2 style="margin-top:14px">Dale al interruptor</h2>
+    </div>
+    <div class="switch-head rv">
+      <span class="switch-label on" data-mode="bad" id="lblBad">EL VIEJO MUNDO</span>
+      <button class="toggle" id="toggle" type="button" aria-label="Cambiar entre el viejo mundo y Azem" aria-pressed="false"></button>
+      <span class="switch-label" data-mode="good" id="lblGood">CON AZEM</span>
+    </div>
+    <div class="flip-list rv" id="flipList">
+      <div class="flip"><span class="flip-ico">💸</span><span class="flip-txt" data-bad="Presupuesto: «depende». Factura final: sorpresa." data-good="399 € de alta. Lo sabes antes de empezar y no crece por el camino.">Presupuesto: «depende». Factura final: sorpresa.</span></div>
+      <div class="flip"><span class="flip-ico">🗓️</span><span class="flip-txt" data-bad="«Tu web estará en 3 o 4 meses» (spoiler: no)." data-good="Trabajamos con plazos de días y semanas, no de trimestres.">«Tu web estará en 3 o 4 meses» (spoiler: no).</span></div>
+      <div class="flip"><span class="flip-ico">🔒</span><span class="flip-txt" data-bad="Permanencia de 12 meses en letra pequeña." data-good="Sin permanencia. Te quedas porque quieres, no porque firmaste.">Permanencia de 12 meses en letra pequeña.</span></div>
+      <div class="flip"><span class="flip-ico">🤯</span><span class="flip-txt" data-bad="Te hablan de «arquitectura headless multicapa»." data-good="Te lo explicamos en cristiano. Si no se entiende, es culpa nuestra.">Te hablan de «arquitectura headless multicapa».</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFIESTO ============ -->
+<section style="padding-top:12px">
+  <div class="wrap">
+    <div class="cat-head rv" style="text-align:center;margin-bottom:26px">
+      <span class="eyebrow" style="justify-content:center">Lo que defendemos</span>
+      <h2 style="margin-top:14px">Cuatro reglas que no negociamos</h2>
+    </div>
+    <div class="mani">
+      <div class="mani-item rv">
+        <span class="mani-num">01</span>
+        <div><h3>Internet no es un lujo</h3><p>Cada negocio, por pequeño que sea, merece una presencia digital digna. Democratizar eso es literalmente nuestro modelo de negocio, no una frase de póster.</p></div>
+      </div>
+      <div class="mani-item rv">
+        <span class="mani-num">02</span>
+        <div><h3>Sin humo</h3><p>Si un servicio no te va a dar retorno, te lo decimos y no te lo vendemos. Preferimos un cliente que confía a una factura que se arrepiente.</p></div>
+      </div>
+      <div class="mani-item rv">
+        <span class="mani-num">03</span>
+        <div><h3>Tecnología de grandes, precio de barrio</h3><p>Usamos la misma automatización e inteligencia artificial que las grandes empresas — para que a ti te cueste una fracción, no para cobrarte más.</p></div>
+      </div>
+      <div class="mani-item rv">
+        <span class="mani-num">04</span>
+        <div><h3>Somos de aquí</h3><p>Gran Canaria. Conocemos a tu cliente porque es nuestro vecino. Y respondemos el mismo día, porque es lo que nos gustaría que hicieran con nosotros.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPROMISOS ============ -->
+<section style="padding-top:12px">
+  <div class="wrap">
+    <div class="pledges rv" id="pledges">
+      <div class="pledge"><div class="pledge-n"><span data-count="0">0</span><small> €</small></div><div class="pledge-t">DE LETRA PEQUEÑA</div></div>
+      <div class="pledge"><div class="pledge-n"><span data-count="0">0</span><small> MESES</small></div><div class="pledge-t">DE PERMANENCIA</div></div>
+      <div class="pledge"><div class="pledge-n"><span data-count="24">0</span><small> H</small></div><div class="pledge-t">RESPUESTA MÁXIMA</div></div>
+      <div class="pledge"><div class="pledge-n"><span data-count="100">0</span><small> %</small></div><div class="pledge-t">GRAN CANARIA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="final rv">
+      <span class="eyebrow" style="justify-content:center">¿Hablamos?</span>
+      <h2>Cuéntanos tu negocio. Nosotros ponemos el resto.</h2>
+      <p class="sub">Un WhatsApp, cero compromiso. Si podemos ayudarte, te decimos cómo. Si no, también.</p>
+      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20Nosotros%20y%20quiero%20contaros%20mi%20negocio" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+        Hablar por WhatsApp
+      </a>
+      <p class="fine">Sin compromiso · Sin permanencia · Respuesta el mismo día</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="logo" style="font-size:1rem">az<em>em</em></span>
+    <div class="foot-links">
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/politica-cookies/">Política de cookies</a>
+      <a href="#" data-cc="show-preferencesModal">Preferencias de cookies</a>
+    </div>
+    <span>Gran Canaria · © 2026</span>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20mi%20negocio" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+</a>
+
+<script>
+// menu hamburguesa
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('mmenu');
+  if(!b||!m)return;
+  function close(){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.classList.remove('menu-lock');}
+  b.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+    document.body.classList.toggle('menu-lock',open);
+  });
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+})();
+// flotante whatsapp
+(function(){
+  var btn=document.getElementById('waFloat'),hero=document.querySelector('.hero');
+  if(!btn||!hero)return;
+  function check(){btn.classList.toggle('on',window.scrollY>hero.offsetHeight*0.8);}
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+// duelo de precios
+(function(){
+  var duel=document.getElementById('duel');
+  if(!duel)return;
+  var bad=document.getElementById('priceBad'),
+      good=document.getElementById('priceGood'),
+      stamp=document.getElementById('stamp'),
+      reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fmt=function(n){return n.toLocaleString('es-ES')};
+  function play(){
+    if(reduce){bad.textContent=fmt(3480);good.textContent='399';stamp.classList.add('on');creep();return;}
+    var t0=null,D=1600;
+    function step(ts){
+      if(!t0)t0=ts;
+      var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+      bad.textContent=fmt(Math.round(3480*e));
+      good.textContent=String(Math.round(399*e));
+      if(p<1){requestAnimationFrame(step);}
+      else{stamp.classList.add('on');creep();}
+    }
+    requestAnimationFrame(step);
+  }
+  var creepVal=3480;
+  function creep(){
+    setInterval(function(){
+      creepVal+=Math.floor(20+Math.random()*45);
+      bad.textContent=fmt(creepVal);
+    },1500);
+  }
+  if(!('IntersectionObserver' in window)){play();return;}
+  var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){play();io.disconnect();}
+  },{threshold:.4});
+  io.observe(duel);
+})();
+// interruptor viejo mundo / azem
+(function(){
+  var t=document.getElementById('toggle');
+  if(!t)return;
+  var list=document.getElementById('flipList'),
+      lb=document.getElementById('lblBad'),lg=document.getElementById('lblGood'),
+      txts=list.querySelectorAll('.flip-txt'),
+      flips=list.querySelectorAll('.flip'),
+      good=false;
+  function set(g){
+    good=g;
+    t.classList.toggle('on',g);
+    t.setAttribute('aria-pressed',g?'true':'false');
+    lb.classList.toggle('on',!g);
+    lg.classList.toggle('on',g);
+    txts.forEach(function(x,i){
+      setTimeout(function(){
+        x.textContent=g?x.dataset.good:x.dataset.bad;
+        x.style.animation='none';void x.offsetWidth;x.style.animation='';
+        flips[i].classList.toggle('mode-good',g);
+      },i*90);
+    });
+  }
+  t.addEventListener('click',function(){set(!good)});
+  lb.addEventListener('click',function(){if(good)set(false)});
+  lg.addEventListener('click',function(){if(!good)set(true)});
+})();
+// contadores de compromisos
+(function(){
+  var box=document.getElementById('pledges');
+  if(!box)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var spans=box.querySelectorAll('[data-count]');
+  function play(){
+    spans.forEach(function(s){
+      var target=parseInt(s.dataset.count,10);
+      if(reduce||target===0){s.textContent=String(target);return;}
+      var t0=null,D=1200;
+      function step(ts){
+        if(!t0)t0=ts;
+        var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+        s.textContent=String(Math.round(target*e));
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if(!('IntersectionObserver' in window)){play();return;}
+  var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){play();io.disconnect();}
+  },{threshold:.4});
+  io.observe(box);
+})();
+// reveals
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script defer src="/assets/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/assets/cookieconsent/cookieconsent-config.js"></script>
+</body>
+</html>
