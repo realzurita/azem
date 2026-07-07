@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/assets/cookieconsent/cookie-azem.css">
 <style>
 :root{
   --bg:#0A0E1A;
@@ -572,8 +574,10 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
   <div class="wrap foot">
     <span class="logo" style="font-size:1rem">az<em>em</em></span>
     <div class="foot-links">
-      <a href="#">Aviso legal</a>
-      <a href="#">Privacidad</a>
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/politica-cookies/">Política de cookies</a>
+      <a href="#" data-cc="show-preferencesModal">Preferencias de cookies</a>
     </div>
     <span>Gran Canaria · © 2026</span>
   </div>
@@ -642,5 +646,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
+<script defer src="/assets/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/assets/cookieconsent/cookieconsent-config.js"></script>
 </body>
 </html>
