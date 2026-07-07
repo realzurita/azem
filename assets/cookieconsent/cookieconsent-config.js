@@ -86,7 +86,7 @@
               },
               {
                 title: 'Más información',
-                description: 'Para cualquier duda sobre el tratamiento de tus datos puedes escribirnos a <a href="mailto:info@sicomunidadescanarias.es">info@sicomunidadescanarias.es</a> o consultar la <a href="/politica-cookies/">Política de cookies</a> completa.'
+                description: 'Para cualquier duda sobre el tratamiento de tus datos puedes escribirnos a <a href="mailto:info@azemagency.es">info@azemagency.es</a> o consultar la <a href="/politica-cookies/">Política de cookies</a> completa.'
               }
             ]
           }
