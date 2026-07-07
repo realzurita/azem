@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué tu negocio no aparece en Google (5 razones y sus soluciones) — Azem</title>
+<meta name="description" content="Tus clientes te buscan en Google y encuentran a tu competencia. Las 5 razones más comunes por las que un negocio local no aparece, explicadas sin tecnicismos.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/assets/cookieconsent/cookie-azem.css">
+<style>
+:root{
+  --bg:#0A0E1A;--surface:#101625;--surface-2:#151D30;
+  --line:rgba(237,241,247,.08);--text:#EDF1F7;--muted:#98A3B8;
+  --blue:#3E7BFF;--blue-soft:rgba(62,123,255,.14);
+  --yellow:#FFD23F;--yellow-soft:rgba(255,210,63,.12);
+  --radius:16px;
+  --font-display:"Archivo",sans-serif;--font-body:"Hanken Grotesk",sans-serif;--font-mono:"IBM Plex Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--yellow);color:#0A0E1A}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
+h1,h2,h3{font-family:var(--font-display);font-variation-settings:"wdth" 118;line-height:1.06;letter-spacing:-.01em}
+h1{font-weight:850;font-size:clamp(2.1rem,7.5vw,3.6rem)}
+h3{font-weight:700;font-size:1.25rem;font-variation-settings:"wdth" 110;line-height:1.25}
+.sub{color:var(--muted);font-size:clamp(1rem,2.5vw,1.15rem);max-width:56ch}
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,14,26,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--font-display);font-variation-settings:"wdth" 125;font-weight:850;font-size:1.15rem;letter-spacing:-.02em}
+.logo em{font-style:normal;color:var(--yellow)}
+.nav-links{display:none;gap:28px;font-size:.92rem;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.act{color:var(--text)}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:.95rem;padding:12px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn-wa{background:var(--yellow);color:#0A0E1A}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,210,63,.25)}
+.nav .btn{padding:9px 18px;font-size:.88rem}
+.burger{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1px solid var(--line);border-radius:10px;cursor:pointer;padding:0}
+.burger span{display:block;width:16px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s ease}
+.burger.open span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.burger.open span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+@media(min-width:768px){.burger{display:none}}
+.mmenu{position:fixed;top:64px;left:0;right:0;bottom:0;z-index:49;background:rgba(10,14,26,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:26px 20px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease}
+.mmenu.open{opacity:1;pointer-events:auto;transform:none}
+.mmenu a{font-family:var(--font-display);font-variation-settings:"wdth" 112;font-weight:800;font-size:1.55rem;padding:15px 4px;border-bottom:1px solid var(--line)}
+.mmenu a.act{color:var(--blue)}
+.mmenu .btn-wa{margin-top:24px;align-self:flex-start;font-size:1rem;padding:14px 26px;border-bottom:none}
+body.menu-lock{overflow:hidden}
+@media(min-width:768px){.mmenu{display:none}}
+
+.hero{padding:52px 0 30px;position:relative}
+@media(min-width:900px){.hero{padding:76px 0 40px}}
+.hero-glow{position:absolute;inset:auto auto 0 50%;transform:translateX(-50%);width:min(900px,100vw);height:360px;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at center,rgba(62,123,255,.14),transparent 65%)}
+.hero h1{font-size:clamp(1.9rem,6.5vw,3.1rem);max-width:22ch}
+.hero .sub{margin-top:16px}
+.art-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.art-meta b{color:var(--yellow);font-weight:500}
+.prose{max-width:720px;padding:26px 0 30px}
+.prose h2{font-family:var(--font-display);font-variation-settings:"wdth" 112;font-weight:800;font-size:clamp(1.3rem,4vw,1.6rem);line-height:1.2;margin:40px 0 14px}
+.prose h2 .num{color:var(--blue);font-family:var(--font-mono);font-size:.75em;font-weight:500;margin-right:10px;vertical-align:2px}
+.prose p{margin:0 0 18px;color:#C9D2E0}
+.prose strong{color:var(--text)}
+.prose ul{margin:0 0 18px;padding-left:22px;color:#C9D2E0}
+.prose li{margin-bottom:8px}
+.prose li::marker{color:var(--blue)}
+.callout{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--yellow);border-radius:0 12px 12px 0;padding:16px 20px;margin:26px 0;color:#C9D2E0;font-size:.95rem}
+.callout b{color:var(--yellow)}
+.cta-box{background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:18px;padding:32px 24px;text-align:center;margin:44px 0 0}
+.cta-box h2{font-family:var(--font-display);font-variation-settings:"wdth" 112;font-weight:800;font-size:clamp(1.25rem,4vw,1.55rem);margin-bottom:10px}
+.cta-box p{color:var(--muted);font-size:.95rem;max-width:48ch;margin:0 auto 22px}
+.cta-box .fine{font-family:var(--font-mono);font-size:11px;margin:16px 0 0}
+.rel{max-width:720px;padding:10px 0 80px}
+.rel-label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:block}
+.rel-card{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:border-color .2s ease,transform .2s ease}
+.rel-card:hover{border-color:rgba(62,123,255,.45);transform:translateY(-2px)}
+.rel-card svg{flex:none;color:var(--blue)}
+.rel-card h3{font-size:1rem}
+.rel-card p{color:var(--muted);font-size:.85rem;margin-top:2px}
+footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:14px 24px}
+.foot-links a:hover{color:var(--text)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/">az<em>em</em></a>
+    <div class="nav-links">
+      <a href="/">Inicio</a>
+      <a href="/#planes">Planes</a>
+      <a href="/servicios/">Complementos</a>
+      <a href="/blog/" class="act">Blog</a>
+      <a href="/#faq">Dudas</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+        WhatsApp
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="/">Inicio</a>
+  <a href="/#planes">Planes</a>
+  <a href="/servicios/">Complementos</a>
+  <a href="/blog/" class="act">Blog</a>
+  <a href="/#faq">Dudas</a>
+  <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+</div>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <span class="eyebrow">Blog · SEO local</span>
+    <h1 style="margin-top:16px">Por qué tu negocio no aparece en Google</h1>
+    <p class="sub">Tus clientes te buscan y encuentran a tu competencia. Casi siempre es por una de estas cinco razones — y ninguna requiere ser informático para entenderla.</p>
+    <div class="art-meta"><span>Equipo Azem</span><span>Google Business · SEO</span><span><b>6 min</b> de lectura</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="prose">
+    <p>Escribes el nombre de tu servicio en Google — «fontanero en Telde», «clínica dental Vecindario» — y ahí están: tu competencia, uno detrás de otro. Tú no apareces ni bajando. Y lo frustrante es que quizá llevas más años, trabajas mejor y cobras lo justo.</p>
+    <p>La buena noticia: <strong>Google no premia al mejor negocio, premia al que se lo pone fácil</strong>. Y ponérselo fácil casi nunca es cuestión de dinero, sino de arreglar cinco cosas concretas. Vamos una a una.</p>
+
+    <h2 class="rv"><span class="num">01</span>No tienes ficha de Google (o está a medias)</h2>
+    <p>La ficha de Google Business es ese recuadro con mapa, fotos, horario y reseñas que sale cuando buscas un negocio. Para búsquedas locales, <strong>es más importante que tu propia web</strong>: es lo primero que ve el cliente y de donde salen la mayoría de llamadas.</p>
+    <p>Los fallos típicos: no tenerla, tenerla sin verificar (Google no la muestra en condiciones), o tenerla vacía — sin fotos, sin horario, con una categoría genérica. Una ficha completa con fotos reales, categoría exacta y datos coherentes puede cambiar tu visibilidad en semanas.</p>
+
+    <h2 class="rv"><span class="num">02</span>Tu web no dice dónde estás ni qué haces</h2>
+    <p>Suena absurdo, pero pasa constantemente: webs preciosas que en ningún sitio dicen «fontanería en Las Palmas» con todas las letras. Ponen «soluciones integrales para tu hogar» — y Google no adivina.</p>
+    <p>Tu web tiene que decir, en texto normal y visible, <strong>qué haces y en qué zona</strong>: en el título de la página, en el encabezado principal y de forma natural en los textos. No es truco, es claridad — la misma que agradece un cliente.</p>
+
+    <h2 class="rv"><span class="num">03</span>No tienes reseñas (o tienes tres del 2019)</h2>
+    <p>Las reseñas son el factor que más pesa para aparecer en el mapa junto a tus competidores. Google interpreta un flujo constante de reseñas como señal de que el negocio está vivo y la gente confía en él.</p>
+    <p>No necesitas cientos: necesitas <strong>más y más recientes que los negocios que salen por encima de ti</strong>. Mira cuántas tienen ellos — ese es tu número objetivo. De cómo conseguirlas sin rogar hablamos en otra guía de este blog.</p>
+
+    <h2 class="rv"><span class="num">04</span>Tu web es lenta o se ve mal en el móvil</h2>
+    <p>Más de 8 de cada 10 búsquedas locales se hacen desde el teléfono. Si tu web tarda en cargar, hay que hacer zoom para leer o el botón de llamar no se ve, el cliente vuelve atrás y toca el siguiente resultado. Google mide exactamente eso — y te baja.</p>
+    <ul>
+      <li>Prueba rápida: abre tu web con datos móviles (no wifi). ¿Carga en menos de 3 segundos?</li>
+      <li>¿Se puede llamar o escribir por WhatsApp con un solo toque?</li>
+      <li>¿Se lee todo sin hacer zoom?</li>
+    </ul>
+    <p>Si has respondido no a alguna, ahí tienes un motivo por el que la competencia te adelanta.</p>
+
+    <h2 class="rv"><span class="num">05</span>Tu web no responde lo que la gente pregunta</h2>
+    <p>La gente no solo busca «electricista Arucas». Busca «cuánto cuesta un boletín eléctrico», «por qué salta el diferencial», «cada cuánto revisar la instalación». Cada pregunta que tu web responde es <strong>una puerta de entrada más</strong> — y quien resuelve la duda se queda con la llamada.</p>
+    <p>Por eso un blog bien hecho no es postureo: es la forma de aparecer en cientos de búsquedas que tu competencia ignora.</p>
+
+    <div class="callout rv"><b>En resumen:</b> ficha de Google completa, web que diga qué haces y dónde, reseñas recientes, carga rápida en móvil y contenido que responda preguntas reales. Ninguna de las cinco requiere ser informático — solo hacerlas, y en ese orden.</div>
+
+    <div class="cta-box rv">
+      <h2>¿Quieres saber cuál de las 5 te está frenando?</h2>
+      <p>Pide el chequeo gratuito de presencia online: en 24 horas te enviamos cómo aparece tu negocio en Google y qué arreglar primero.</p>
+      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20el%20chequeo%20gratuito%20de%20mi%20presencia%20online" target="_blank" rel="noopener">Pedir chequeo gratuito</a>
+      <p class="fine" style="color:var(--muted)">Sin compromiso · Sin permanencia · Respuesta el mismo día</p>
+    </div>
+  </article>
+  <aside class="rel">
+    <span class="rel-label">Sigue leyendo</span>
+    <a class="rel-card" href="/blog/resenas-google-negocio-local/">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <div><h3>Reseñas de Google: el vendedor silencioso de tu negocio</h3><p>Cómo conseguirlas sin rogar, cómo responderlas y qué no hacer jamás.</p></div>
+    </a>
+  </aside>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="logo" style="font-size:1rem">az<em>em</em></span>
+    <div class="foot-links">
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/politica-cookies/">Política de cookies</a>
+      <a href="#" data-cc="show-preferencesModal">Preferencias de cookies</a>
+    </div>
+    <span>Gran Canaria · © 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('mmenu');
+  if(!b||!m)return;
+  function close(){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.classList.remove('menu-lock');}
+  b.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+    document.body.classList.toggle('menu-lock',open);
+  });
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+})();
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script defer src="/assets/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/assets/cookieconsent/cookieconsent-config.js"></script>
+</body>
+</html>
