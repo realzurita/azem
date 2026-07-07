@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios y complementos — Azem | Todo parte de tu web</title>
+<meta name="description" content="Complementos para tu web: asistente IA por WhatsApp, Google Business, SEO, reseñas, menú QR multiidioma, campañas y más. Actívalos cuando tu negocio los necesite.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/assets/cookieconsent/cookie-azem.css">
+<style>
+:root{
+  --bg:#0A0E1A;
+  --surface:#101625;
+  --surface-2:#151D30;
+  --line:rgba(237,241,247,.08);
+  --text:#EDF1F7;
+  --muted:#98A3B8;
+  --blue:#3E7BFF;
+  --blue-soft:rgba(62,123,255,.14);
+  --yellow:#FFD23F;
+  --yellow-soft:rgba(255,210,63,.12);
+  --radius:16px;
+  --font-display:"Archivo",sans-serif;
+  --font-body:"Hanken Grotesk",sans-serif;
+  --font-mono:"IBM Plex Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--yellow);color:#0A0E1A}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
+h1,h2,h3{font-family:var(--font-display);font-variation-settings:"wdth" 118;line-height:1.06;letter-spacing:-.01em}
+h1{font-weight:850;font-size:clamp(2.1rem,8vw,3.9rem)}
+h2{font-weight:800;font-size:clamp(1.6rem,5vw,2.4rem)}
+h3{font-weight:700;font-size:1.12rem;font-variation-settings:"wdth" 110}
+.sub{color:var(--muted);font-size:clamp(1rem,2.5vw,1.15rem);max-width:56ch}
+section{padding:56px 0}
+@media(min-width:768px){section{padding:84px 0}}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,14,26,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--font-display);font-variation-settings:"wdth" 125;font-weight:850;font-size:1.15rem;letter-spacing:-.02em}
+.logo em{font-style:normal;color:var(--yellow)}
+.nav-links{display:none;gap:28px;font-size:.92rem;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.act{color:var(--text)}
+@media(min-width:768px){.nav-links{display:flex}}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-body);font-weight:700;font-size:.95rem;
+  padding:12px 22px;border-radius:999px;border:none;cursor:pointer;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+}
+.btn-wa{background:var(--yellow);color:#0A0E1A}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,210,63,.25)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.nav .btn{padding:9px 18px;font-size:.88rem}
+
+/* ---------- HERO ---------- */
+.hero{padding:56px 0 40px;position:relative}
+@media(min-width:900px){.hero{padding:88px 0 56px}}
+.hero h1 .hl{color:var(--blue)}
+.hero .sub{margin:20px auto 0}
+.hero-c{text-align:center;max-width:760px;margin:0 auto}
+.hero-c .sub{margin-left:auto;margin-right:auto}
+.hero-glow{
+  position:absolute;inset:auto auto 0 50%;transform:translateX(-50%);
+  width:min(900px,100vw);height:420px;pointer-events:none;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(62,123,255,.16),transparent 65%);
+}
+
+/* catnav pills */
+.catnav{
+  display:flex;gap:10px;overflow-x:auto;padding:26px 4px 6px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  justify-content:flex-start;
+}
+.catnav::-webkit-scrollbar{display:none}
+@media(min-width:900px){.catnav{justify-content:center;flex-wrap:wrap;overflow:visible}}
+.catnav a{
+  flex:none;font-family:var(--font-mono);font-size:12.5px;letter-spacing:.03em;
+  padding:9px 16px;border-radius:999px;border:1px solid var(--line);
+  color:var(--muted);background:var(--surface);
+  transition:border-color .15s ease,color .15s ease,transform .15s ease;
+}
+.catnav a:hover{border-color:var(--blue);color:var(--text);transform:translateY(-1px)}
+.catnav a span{color:var(--yellow);margin-right:6px}
+
+/* ---------- FREEBIES ---------- */
+.free{padding-top:24px}
+.free-grid{display:grid;gap:16px}
+@media(min-width:768px){.free-grid{grid-template-columns:1fr 1fr;gap:20px}}
+.free-card{
+  position:relative;background:linear-gradient(160deg,var(--surface-2),var(--surface));
+  border:1px solid rgba(255,210,63,.35);border-radius:var(--radius);
+  padding:26px 24px;overflow:hidden;
+}
+.free-card::before{
+  content:"";position:absolute;top:-60px;right:-60px;width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,210,63,.18),transparent 70%);pointer-events:none;
+}
+.free-tag{
+  display:inline-block;background:var(--yellow);color:#0A0E1A;
+  font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.06em;
+  padding:5px 12px;border-radius:999px;margin-bottom:14px;
+}
+.free-card h3{font-size:1.25rem;margin-bottom:8px}
+.free-card p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.free-card .btn{font-size:.9rem;padding:10px 20px}
+
+/* ---------- CATEGORÍAS Y CARDS ---------- */
+.cat-head{margin-bottom:28px}
+.cat-head h2{margin-top:14px}
+.cat-head .sub{margin-top:10px;font-size:1rem}
+.grid{display:grid;gap:16px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr;gap:20px}}
+@media(min-width:1000px){.grid-3{grid-template-columns:1fr 1fr 1fr}}
+.card{
+  display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;position:relative;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(62,123,255,.45);box-shadow:0 16px 44px rgba(0,0,0,.4)}
+.card-ico{
+  width:44px;height:44px;border-radius:12px;flex:none;
+  background:var(--blue-soft);color:var(--blue);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.card h3{margin-bottom:8px;padding-right:64px}
+.card p{color:var(--muted);font-size:.93rem;flex:1}
+.card-tag{
+  position:absolute;top:22px;right:20px;
+  font-family:var(--font-mono);font-size:10.5px;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px;
+}
+.card-tag.m{color:var(--blue);border-color:rgba(62,123,255,.4)}
+.card-cta{
+  margin-top:18px;display:inline-flex;align-items:center;gap:7px;
+  font-weight:700;font-size:.9rem;color:var(--blue);
+}
+.card-cta svg{transition:transform .15s ease}
+.card:hover .card-cta svg{transform:translateX(4px)}
+.card-badge{
+  display:inline-block;margin-left:8px;vertical-align:2px;
+  background:var(--yellow-soft);color:var(--yellow);
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.05em;
+  padding:3px 9px;border-radius:999px;
+}
+
+/* ---------- MÓDULO: CHAT ASISTENTE ---------- */
+.demo{
+  background:var(--surface-2);border:1px solid var(--line);border-radius:14px;
+  padding:16px;margin:16px 0 2px;
+}
+.chat2{display:flex;flex-direction:column;gap:9px;min-height:158px}
+.bub{
+  max-width:86%;padding:9px 13px;border-radius:14px;font-size:.86rem;line-height:1.45;
+  opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease;
+}
+.bub.show{opacity:1;transform:none}
+.bub-in{align-self:flex-start;background:#1B2438;border-bottom-left-radius:4px}
+.bub-out{align-self:flex-end;background:rgba(62,123,255,.22);border:1px solid rgba(62,123,255,.35);border-bottom-right-radius:4px}
+.bub-typing{align-self:flex-end;background:rgba(62,123,255,.22);border:1px solid rgba(62,123,255,.35);border-bottom-right-radius:4px;display:none;padding:11px 14px}
+.bub-typing.show{display:flex;opacity:1;transform:none;gap:4px}
+.bub-typing i{width:5px;height:5px;border-radius:50%;background:var(--text);opacity:.5;animation:tp 1s infinite}
+.bub-typing i:nth-child(2){animation-delay:.15s}
+.bub-typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:.9;transform:translateY(-2px)}}
+.chat-chip2{
+  align-self:center;margin-top:2px;
+  font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;
+  color:var(--yellow);background:var(--yellow-soft);
+  padding:5px 12px;border-radius:999px;
+  opacity:0;transition:opacity .4s ease;
+}
+.chat-chip2.show{opacity:1}
+
+/* ---------- MÓDULO: RESEÑAS ---------- */
+.stars-demo{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 10px}
+.qr-mini{
+  width:64px;height:64px;border-radius:10px;background:var(--text);position:relative;flex:none;
+  display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr);gap:2px;padding:7px;
+}
+.qr-mini i{background:#0A0E1A;border-radius:1px}
+.qr-mini i.o{background:transparent}
+.stars{display:flex;gap:5px}
+.stars svg{width:24px;height:24px;color:rgba(237,241,247,.15);transition:color .25s ease,transform .25s ease}
+.stars svg.on{color:var(--yellow);transform:scale(1.12)}
+.stars-cap{font-family:var(--font-mono);font-size:11px;color:var(--muted);opacity:0;transition:opacity .4s ease}
+.stars-cap.show{opacity:1}
+.stars-cap b{color:var(--yellow);font-weight:500}
+
+/* ---------- MÓDULO: MENÚ QR IDIOMAS ---------- */
+.lang-tabs{display:flex;gap:6px;margin-bottom:12px}
+.lang-tabs button{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;
+  padding:5px 11px;border-radius:999px;cursor:pointer;
+  background:transparent;border:1px solid var(--line);color:var(--muted);
+  transition:all .15s ease;
+}
+.lang-tabs button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.dish{border-top:1px solid var(--line);padding-top:12px}
+.dish-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.dish-name{font-weight:700;font-size:.95rem}
+.dish-price{font-family:var(--font-mono);font-size:.88rem;color:var(--yellow);flex:none}
+.dish-desc{color:var(--muted);font-size:.84rem;margin-top:3px;min-height:2.6em}
+.dish-fade{animation:dishIn .3s ease}
+@keyframes dishIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ---------- EXTRAS ---------- */
+.extras{display:grid;gap:14px}
+@media(min-width:700px){.extras{grid-template-columns:1fr 1fr}}
+.extra{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;transition:border-color .2s ease,transform .2s ease;
+}
+.extra:hover{border-color:rgba(62,123,255,.45);transform:translateY(-2px)}
+.extra .card-ico{width:38px;height:38px;margin:0;border-radius:10px}
+.extra h3{font-size:1rem;margin-bottom:3px}
+.extra p{color:var(--muted);font-size:.88rem}
+
+/* ---------- CTA FINAL ---------- */
+.final{
+  background:linear-gradient(160deg,var(--surface-2),var(--surface));
+  border:1px solid var(--line);border-radius:20px;
+  padding:44px 24px;text-align:center;position:relative;overflow:hidden;
+}
+@media(min-width:768px){.final{padding:64px 40px}}
+.final::before{
+  content:"";position:absolute;inset:auto auto -120px 50%;transform:translateX(-50%);
+  width:520px;height:260px;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(255,210,63,.14),transparent 65%);
+}
+.final h2{max-width:22ch;margin:14px auto 0}
+.final .sub{margin:16px auto 28px}
+.final .fine{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:18px}
+
+/* ---------- FLOTANTE WHATSAPP ---------- */
+.wa-float{
+  position:fixed;
+  right:max(18px, env(safe-area-inset-right));
+  bottom:max(20px, env(safe-area-inset-bottom));
+  z-index:60;
+  width:58px;height:58px;border-radius:50%;
+  background:var(--yellow);color:#0A0E1A;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(255,210,63,.35),0 2px 8px rgba(0,0,0,.4);
+  opacity:0;transform:translateY(16px) scale(.85);pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease,box-shadow .2s ease;
+}
+.wa-float.on{opacity:1;transform:none;pointer-events:auto}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(255,210,63,.45),0 3px 10px rgba(0,0,0,.45)}
+.wa-float svg{width:30px;height:30px}
+@media(min-width:768px){.wa-float{width:62px;height:62px;right:26px;bottom:28px}.wa-float svg{width:32px;height:32px}}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:14px 24px}
+.foot-links a:hover{color:var(--text)}
+
+/* reveals */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/">az<em>em</em></a>
+    <div class="nav-links">
+      <a href="/">Inicio</a>
+      <a href="/#planes">Planes</a>
+      <a href="/servicios/" class="act">Complementos</a>
+      <a href="/#faq">Dudas</a>
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-c">
+    <span class="eyebrow" style="justify-content:center">Complementos · Sin permanencia</span>
+    <h1 style="margin-top:16px">Todo parte de tu web. <span class="hl">Esto la hace trabajar más.</span></h1>
+    <p class="sub">Estos servicios complementan tu pack inicial: los activas cuando tu negocio los necesita y los quitas cuando no. ¿No sabes cuál te conviene? Te lo decimos gratis — aunque la respuesta sea «todavía no lo necesitas».</p>
+    <nav class="catnav" aria-label="Categorías">
+      <a href="#gratis"><span>★</span>Gratis</a>
+      <a href="#atiende">Atiende sin estar</a>
+      <a href="#visibilidad">Que te encuentren</a>
+      <a href="#fideliza">Que vuelvan</a>
+      <a href="#acelera">Acelera</a>
+      <a href="#hosteleria">Hostelería</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ GRATIS ============ -->
+<section class="free" id="gratis">
+  <div class="wrap">
+    <div class="free-grid">
+      <div class="free-card rv">
+        <span class="free-tag">GRATIS · SIN COMPROMISO</span>
+        <h3>Estudio de viabilidad</h3>
+        <p>Nos cuentas tu negocio y te decimos qué complementos te van a dar retorno real y cuáles no merecen tu dinero todavía. Consejo honesto, sin humo.</p>
+        <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20el%20estudio%20de%20viabilidad%20gratuito%20para%20mi%20negocio" target="_blank" rel="noopener">Pedir mi estudio</a>
+      </div>
+      <div class="free-card rv">
+        <span class="free-tag">GRATIS · EN 24H</span>
+        <h3>Chequeo de presencia online</h3>
+        <p>Te enviamos en 24 horas un informe de cómo aparece tu negocio en Google: ficha, reseñas, web y qué ven tus clientes antes de decidirse.</p>
+        <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20el%20chequeo%20gratuito%20de%20mi%20presencia%20online" target="_blank" rel="noopener">Pedir mi chequeo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ATIENDE SIN ESTAR ============ -->
+<section id="atiende">
+  <div class="wrap">
+    <div class="cat-head rv">
+      <span class="eyebrow">01 · Automatización</span>
+      <h2>Atiende sin estar</h2>
+      <p class="sub">Tu negocio responde aunque tú estés trabajando, conduciendo o durmiendo.</p>
+    </div>
+    <div class="grid">
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>Asistente IA por WhatsApp</h3>
+        <p>Responde las dudas de tus clientes al momento y agenda visitas o reservas por ti, 24/7. Tú lo supervisas desde tu móvil y entras en la conversación cuando quieras.</p>
+        <div class="demo" id="chatDemo" aria-hidden="true">
+          <div class="chat2">
+            <div class="bub bub-in">Hola, ¿tenéis hueco el sábado sobre las 13:00?</div>
+            <div class="bub bub-typing"><i></i><i></i><i></i></div>
+            <div class="bub bub-out">¡Sí! Te he reservado el sábado a las 13:00 a nombre de Marta. Te llega la confirmación ahora ✅</div>
+            <span class="chat-chip2">⚡ Cita agendada automáticamente · 0:12 s</span>
+          </div>
+        </div>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20asistente%20IA%20por%20WhatsApp" target="_blank" rel="noopener">Lo quiero para mi negocio <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div>
+        <h3>Reservas y citas online</h3>
+        <p>Un calendario en tu web donde el cliente elige día y hora sin llamarte. Ideal para clínicas, peluquerías, talleres y consultas. Recordatorios automáticos para que nadie falte.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20sistema%20de%20reservas%20online" target="_blank" rel="noopener">Pedir información <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUE TE ENCUENTREN ============ -->
+<section id="visibilidad">
+  <div class="wrap">
+    <div class="cat-head rv">
+      <span class="eyebrow">02 · Visibilidad</span>
+      <h2>Que te encuentren</h2>
+      <p class="sub">Cuando alguien busca lo que tú haces, que aparezcas tú — no tu competencia.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card rv">
+        <span class="card-tag">Puntual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Alta en Google Business</h3>
+        <p>Creamos y optimizamos tu ficha de Google: fotos, categorías, horarios y descripción. Es lo que aparece en el mapa cuando te buscan — y donde más llamadas se generan.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20dar%20de%20alta%20mi%20negocio%20en%20Google" target="_blank" rel="noopener">Aparecer en Google <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div>
+        <h3>Posicionamiento SEO local</h3>
+        <p>Trabajamos tu web mes a mes para que suba posiciones en las búsquedas de tu zona. No es magia ni es inmediato: es método, y se nota en las llamadas.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20posicionamiento%20SEO%20local" target="_blank" rel="noopener">Subir posiciones <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>Blog con contenido mensual</h3>
+        <p>Artículos que responden lo que tus clientes preguntan a Google. Cada artículo es una puerta de entrada más a tu web, y trabaja para ti para siempre.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20blog%20con%20contenido%20mensual" target="_blank" rel="noopener">Quiero un blog <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUE VUELVAN ============ -->
+<section id="fideliza">
+  <div class="wrap">
+    <div class="cat-head rv">
+      <span class="eyebrow">03 · Reputación y fidelización</span>
+      <h2>Que vuelvan (y te recomienden)</h2>
+      <p class="sub">Conseguir un cliente cuesta. Que repita y hable bien de ti es lo que hace crecer un negocio.</p>
+    </div>
+    <div class="grid">
+      <article class="card rv">
+        <span class="card-tag">Puntual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>QR de reseñas directas</h3>
+        <p>Un código QR que lleva a tu cliente directo a dejarte 5 estrellas en Google, sin buscar nada. Te lo entregamos con archivos listos para imprimir: pegatina, caballete de mesa y tarjeta.</p>
+        <div class="demo" id="starsDemo" aria-hidden="true">
+          <div class="stars-demo">
+            <div class="qr-mini"><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i class="o"></i><i></i><i></i><i class="o"></i><i></i><i></i><i class="o"></i><i></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i></div>
+            <div class="stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="stars-cap">Nueva reseña · <b>★ 5,0</b> en Google</span>
+          </div>
+        </div>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20el%20QR%20de%20rese%C3%B1as%20para%20mi%20negocio" target="_blank" rel="noopener">Conseguir más reseñas <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+        <h3>Newsletter y email marketing</h3>
+        <p>Tu lista de clientes es tuya — no de Instagram. Montamos el sistema para captar contactos y enviarles ofertas, novedades y recordatorios que traen ventas repetidas.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20la%20newsletter%20y%20el%20email%20marketing" target="_blank" rel="noopener">Montar mi lista <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACELERA ============ -->
+<section id="acelera">
+  <div class="wrap">
+    <div class="cat-head rv">
+      <span class="eyebrow">04 · Publicidad</span>
+      <h2>Acelera con publicidad</h2>
+      <p class="sub">El SEO construye a medio plazo. Los anuncios traen clientes esta semana.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>Campañas en Google Ads</h3>
+        <p>Apareces el primero justo cuando alguien busca tu servicio en tu zona. Pagas solo por clic, y nosotros ajustamos la campaña para que cada euro rinda.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesan%20las%20campa%C3%B1as%20en%20Google%20Ads" target="_blank" rel="noopener">Anunciarme en Google <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag m">Mensual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg></div>
+        <h3>Campañas en Instagram y Facebook</h3>
+        <p>Anuncios con tus fotos y ofertas, mostrados a la gente de tu zona con más probabilidad de comprarte. Perfecto para promociones, aperturas y temporada alta.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesan%20las%20campa%C3%B1as%20en%20Instagram%20y%20Facebook" target="_blank" rel="noopener">Lanzar campaña <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag">Puntual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Landing de campaña</h3>
+        <p>Una página específica para tu promoción o anuncio, diseñada para una sola cosa: convertir visitas en contactos. El complemento perfecto de cualquier campaña.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20una%20landing%20para%20mi%20campa%C3%B1a" target="_blank" rel="noopener">Pedir mi landing <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOSTELERÍA ============ -->
+<section id="hosteleria">
+  <div class="wrap">
+    <div class="cat-head rv">
+      <span class="eyebrow">05 · Especial hostelería</span>
+      <h2>Para restaurantes y bares</h2>
+      <p class="sub">En una isla con turismo de media Europa, hablar el idioma de tu cliente vende más.</p>
+    </div>
+    <div class="grid">
+      <article class="card rv">
+        <span class="card-tag">Puntual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h3v3h-3zM19 14h2v2h-2zM14 19h2v2h-2zM19 19h2v2h-2z"/></svg></div>
+        <h3>Menú QR en 4 idiomas <span class="card-badge">ES·EN·DE·FR</span></h3>
+        <p>Tu carta digital, siempre actualizada y en el idioma del cliente. Cambias un precio o un plato y se actualiza al momento — sin reimprimir nada.</p>
+        <div class="demo" id="langDemo">
+          <div class="lang-tabs" role="tablist" aria-label="Idioma del menú">
+            <button class="on" data-l="es" type="button">ES</button>
+            <button data-l="en" type="button">EN</button>
+            <button data-l="de" type="button">DE</button>
+            <button data-l="fr" type="button">FR</button>
+          </div>
+          <div class="dish">
+            <div class="dish-row"><span class="dish-name" id="dishName">Ropa vieja canaria</span><span class="dish-price">12,50&nbsp;€</span></div>
+            <p class="dish-desc" id="dishDesc">Garbanzos, carne de ternera y pollo con verduras de la tierra.</p>
+          </div>
+        </div>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20el%20men%C3%BA%20QR%20en%204%20idiomas%20para%20mi%20restaurante" target="_blank" rel="noopener">Quiero mi carta QR <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="card-tag">Puntual</span>
+        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Web multiidioma</h3>
+        <p>Tu web completa en español, inglés, alemán y francés. Si tu zona vive del turismo, tu próximo cliente probablemente no busca en español.</p>
+        <a class="card-cta" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20mi%20web%20en%20varios%20idiomas" target="_blank" rel="noopener">Traducir mi web <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXTRAS ============ -->
+<section id="extras" style="padding-top:0">
+  <div class="wrap">
+    <div class="cat-head rv">
+      <span class="eyebrow">Y además</span>
+      <h2 style="font-size:clamp(1.35rem,4vw,1.8rem)">Pequeños detalles que suman</h2>
+    </div>
+    <div class="extras">
+      <a class="extra rv" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20email%20corporativo%20con%20mi%20dominio" target="_blank" rel="noopener">
+        <div class="card-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg></div>
+        <div><h3>Email corporativo</h3><p>info@tunegocio.es en vez de un Gmail. Pequeño cambio, mucha más confianza.</p></div>
+      </a>
+      <a class="extra rv" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20informe%20mensual%20de%20resultados" target="_blank" rel="noopener">
+        <div class="card-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+        <div><h3>Informe mensual de resultados</h3><p>Visitas, llamadas y clics en WhatsApp, explicados en cristiano. Sabrás qué funciona.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="final rv">
+      <span class="eyebrow" style="justify-content:center">¿Por dónde empiezo?</span>
+      <h2>No lo decidas a ciegas: pide el estudio gratuito</h2>
+      <p class="sub">Nos cuentas tu negocio por WhatsApp y te decimos qué complemento te va a dar retorno primero. Si algo no te conviene, también te lo diremos.</p>
+      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20el%20estudio%20de%20viabilidad%20gratuito%20para%20mi%20negocio" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+        Pedir estudio gratuito
+      </a>
+      <p class="fine">Sin compromiso · Sin permanencia · Respuesta el mismo día</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="logo" style="font-size:1rem">az<em>em</em></span>
+    <div class="foot-links">
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/politica-cookies/">Política de cookies</a>
+      <a href="#" data-cc="show-preferencesModal">Preferencias de cookies</a>
+    </div>
+    <span>Gran Canaria · © 2026</span>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20complementos" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.2Z"/></svg>
+</a>
+
+<script>
+// flotante whatsapp: aparece al pasar el hero
+(function(){
+  var btn=document.getElementById('waFloat'),
+      hero=document.querySelector('.hero');
+  if(!btn||!hero)return;
+  function check(){
+    var past=window.scrollY>hero.offsetHeight*0.8;
+    btn.classList.toggle('on',past);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+// chat del asistente IA
+(function(){
+  var demo=document.getElementById('chatDemo');
+  if(!demo)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bIn=demo.querySelector('.bub-in'),
+      typ=demo.querySelector('.bub-typing'),
+      bOut=demo.querySelector('.bub-out'),
+      chip=demo.querySelector('.chat-chip2');
+  function play(){
+    if(reduce){bIn.classList.add('show');bOut.classList.add('show');chip.classList.add('show');return;}
+    setTimeout(function(){bIn.classList.add('show')},300);
+    setTimeout(function(){typ.classList.add('show')},1200);
+    setTimeout(function(){typ.classList.remove('show');typ.style.display='none';bOut.classList.add('show')},2700);
+    setTimeout(function(){chip.classList.add('show')},3400);
+  }
+  if(!('IntersectionObserver' in window)){play();return;}
+  var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){play();io.disconnect();}
+  },{threshold:.4});
+  io.observe(demo);
+})();
+// estrellas de reseñas
+(function(){
+  var demo=document.getElementById('starsDemo');
+  if(!demo)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stars=demo.querySelectorAll('.stars svg'),
+      cap=demo.querySelector('.stars-cap');
+  function play(){
+    if(reduce){stars.forEach(function(s){s.classList.add('on')});cap.classList.add('show');return;}
+    stars.forEach(function(s,i){setTimeout(function(){s.classList.add('on')},350+i*220)});
+    setTimeout(function(){cap.classList.add('show')},350+stars.length*220+150);
+  }
+  if(!('IntersectionObserver' in window)){play();return;}
+  var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){play();io.disconnect();}
+  },{threshold:.4});
+  io.observe(demo);
+})();
+// menú QR multiidioma: auto-ciclo + click
+(function(){
+  var demo=document.getElementById('langDemo');
+  if(!demo)return;
+  var data={
+    es:{n:'Ropa vieja canaria',d:'Garbanzos, carne de ternera y pollo con verduras de la tierra.'},
+    en:{n:'Canarian “ropa vieja”',d:'Chickpea stew with beef, chicken and local vegetables.'},
+    de:{n:'Kanarische Ropa Vieja',d:'Kichererbsen-Eintopf mit Rind, Huhn und lokalem Gemüse.'},
+    fr:{n:'Ropa vieja des Canaries',d:'Pois chiches mijotés au bœuf, poulet et légumes locaux.'}
+  };
+  var order=['es','en','de','fr'],
+      tabs=demo.querySelectorAll('.lang-tabs button'),
+      name=document.getElementById('dishName'),
+      desc=document.getElementById('dishDesc'),
+      idx=0,timer=null,
+      reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function setLang(l){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.l===l)});
+    name.textContent=data[l].n;
+    desc.textContent=data[l].d;
+    if(!reduce){
+      name.classList.remove('dish-fade');desc.classList.remove('dish-fade');
+      void name.offsetWidth;
+      name.classList.add('dish-fade');desc.classList.add('dish-fade');
+    }
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      if(timer){clearInterval(timer);timer=null;}
+      idx=order.indexOf(t.dataset.l);
+      setLang(t.dataset.l);
+    });
+  });
+  function start(){
+    if(reduce)return;
+    timer=setInterval(function(){
+      idx=(idx+1)%order.length;
+      setLang(order[idx]);
+    },2400);
+  }
+  if(!('IntersectionObserver' in window)){start();return;}
+  var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){start();io.disconnect();}
+  },{threshold:.4});
+  io.observe(demo);
+})();
+// reveals al hacer scroll
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script defer src="/assets/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/assets/cookieconsent/cookieconsent-config.js"></script>
+</body>
+</html>
