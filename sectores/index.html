@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48x48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
 <link rel="manifest" href="/assets/favicon/site.webmanifest">
-<title>Azem — Tu negocio, visible en Google | Webs para negocios de Gran Canaria</title>
-<meta name="description" content="Creamos tu web, la mantenemos siempre online y hacemos que aparezca cuando tus clientes te buscan. Agencia digital en Gran Canaria. Sin permanencia.">
+<title>Te conocemos — Una web para cada sector | Azem Gran Canaria</title>
+<meta name="description" content="No hacemos webs genéricas: adaptamos tu web y tus herramientas a tu sector. Restaurantes, peluquería, talleres, clínicas y más. Gran Canaria. Sin permanencia.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -348,10 +348,10 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
 
 <nav class="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="#">az<em>em</em></a>
+    <a class="logo" href="/">az<em>em</em></a>
     <div class="nav-links">
-      <a href="/" class="act">Web</a>
-      <a href="/sectores/">Te conocemos</a>
+      <a href="/">Web</a>
+      <a href="/sectores/" class="act">Te conocemos</a>
       <a href="/servicios/">Complementos</a>
       <a href="/nosotros/">Nosotros</a>
       <a href="/blog/">Blog</a>
@@ -366,8 +366,8 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
   </div>
 </nav>
 <div class="mmenu" id="mmenu">
-  <a href="/" class="act">Web</a>
-  <a href="/sectores/">Te conocemos</a>
+  <a href="/">Web</a>
+  <a href="/sectores/" class="act">Te conocemos</a>
   <a href="/servicios/">Complementos</a>
   <a href="/nosotros/">Nosotros</a>
   <a href="/blog/">Blog</a>
@@ -378,17 +378,17 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
   <div class="hero-glow"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Agencia digital · Gran Canaria</span>
-      <h1 style="margin-top:16px">Tus clientes te buscan en Google. <span class="hl">¿Te encuentran?</span></h1>
-      <p class="sub">Creamos tu web, la mantenemos siempre online y hacemos que aparezca cuando alguien busca lo que tú haces. Tú a tu negocio; de internet nos encargamos nosotros.</p>
+      <span class="eyebrow">Te conocemos · Gran Canaria</span>
+      <h1 style="margin-top:16px">No hacemos webs genéricas. <span class="hl">Hacemos la de tu sector.</span></h1>
+      <p class="sub">Un restaurante no necesita lo mismo que una peluquería, ni un taller lo mismo que una clínica. Escuchamos cómo funciona tu negocio y montamos la web —y las herramientas— alrededor de lo que de verdad te trae clientes.</p>
       <div class="hero-ctas">
         <a class="btn btn-wa" href="https://wa.me/34684798648" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-        <a class="btn btn-ghost" href="#planes">Ver planes</a>
+        <a class="btn btn-ghost" href="#sectores">Ver sectores</a>
       </div>
       <div class="hero-trust">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Hecha a tu medida</span>
         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Sin permanencia</span>
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Todo incluido</span>
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Respuesta el mismo día</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Desde 19 €/mes</span>
       </div>
     </div>
 
@@ -419,51 +419,75 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
   </div>
 </header>
 
-<section id="servicios">
+<style>
+.adapt{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
+@media(min-width:768px){.adapt{grid-template-columns:repeat(3,1fr)}}
+.adapt-step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+.adapt-step .num{font-family:var(--font-mono);color:var(--blue);font-size:.85rem}
+.adapt-step h3{font-family:var(--font-display);font-size:1.12rem;margin:10px 0 6px}
+.adapt-step p{color:var(--muted);font-size:.94rem}
+.sectors{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
+@media(min-width:640px){.sectors{grid-template-columns:1fr 1fr}}
+.sector-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:12px}
+.sector-card .sector-ic{width:48px;height:48px;border-radius:13px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center}
+.sector-card h3{font-family:var(--font-display);font-size:1.18rem}
+.sector-card>p{color:var(--muted);font-size:.95rem}
+.sector-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.sector-tags li{font-size:.78rem;color:var(--text);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.sector-more{margin-top:26px;color:var(--muted);font-size:.95rem}
+.sector-more a{color:var(--blue);font-weight:600}
+</style>
+
+<section id="adaptamos">
   <div class="wrap">
-    <span class="eyebrow rv">Servicios</span>
-    <h2 class="rv" style="margin-top:14px;max-width:22ch">Todo lo que tu negocio necesita para existir online</h2>
-    <div class="cards">
-      <div class="card rv">
-        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></div>
-        <h3>Tu web profesional</h3>
-        <p>Diseño a medida, rápida y perfecta en el móvil. Dominio, hosting y seguridad incluidos. Lista en días, no en meses.</p>
-      </div>
-      <div class="card rv">
-        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
-        <h3>Aparecer en Google</h3>
-        <p>Ficha de Google optimizada y artículos pensados para salir cuando alguien busca tus servicios en tu zona.</p>
-      </div>
-      <div class="card rv">
-        <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
-        <h3>Anuncios que traen clientes</h3>
-        <p>Campañas en Google y redes sociales gestionadas por nosotros. Tú decides el objetivo; nosotros lo perseguimos.</p>
-      </div>
+    <span class="eyebrow rv">Cómo nos adaptamos</span>
+    <h2 class="rv" style="margin-top:14px;max-width:24ch">La misma calidad; una web pensada para lo tuyo</h2>
+    <p class="rv" style="color:var(--muted);max-width:58ch;margin-top:12px">No cogemos una plantilla y la rellenamos con tu nombre. Partimos de tu negocio —qué vendes, cómo te encuentran tus clientes y qué te hace perder tiempo cada día— y montamos la web alrededor de eso.</p>
+    <div class="adapt">
+      <div class="adapt-step rv"><div class="num">01</div><h3>Escuchamos tu sector</h3><p>Nos cuentas cómo funciona tu día a día. Sabemos qué necesita un bar, un taller o una clínica porque ya trabajamos con ellos.</p></div>
+      <div class="adapt-step rv"><div class="num">02</div><h3>Elegimos lo que suma</h3><p>Menú QR, reservas, cita online, presupuestos, reseñas… Activamos solo lo que a tu negocio le trae clientes, sin pagar de más.</p></div>
+      <div class="adapt-step rv"><div class="num">03</div><h3>Tú a lo tuyo</h3><p>La montamos, la mantenemos y la actualizamos nosotros. Tú te dedicas a tu negocio; de internet nos encargamos.</p></div>
     </div>
   </div>
 </section>
 
-<section id="proceso" style="padding-top:0">
+<section id="sectores" style="padding-top:0">
   <div class="wrap">
-    <span class="eyebrow rv">Cómo trabajamos</span>
-    <h2 class="rv" style="margin-top:14px">De cero a online en tres pasos</h2>
-    <div class="steps">
-      <div class="step rv">
-        <span class="step-num">/01</span>
-        <h3>Hablamos</h3>
-        <p>Quince minutos por WhatsApp. Nos cuentas qué haces y qué necesitas. Sin reuniones eternas ni tecnicismos.</p>
+    <span class="eyebrow rv">Sectores</span>
+    <h2 class="rv" style="margin-top:14px;max-width:24ch">Sea cual sea tu negocio, encaja</h2>
+    <p class="rv" style="color:var(--muted);max-width:58ch;margin-top:12px">Algunos de los sectores con los que trabajamos. Cada uno con sus herramientas; todos con la misma web rápida, cuidada y siempre online.</p>
+    <div class="sectors">
+
+      <div class="sector-card rv">
+        <div class="sector-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <h3>Restaurantes y hostelería</h3>
+        <p>Que tu carta esté siempre al día, que reserven sin llamar y que las buenas reseñas salgan las primeras.</p>
+        <ul class="sector-tags"><li>Menú QR multiidioma</li><li>Reservas</li><li>Reseñas Google</li><li>Fotos de platos</li></ul>
       </div>
-      <div class="step rv">
-        <span class="step-num">/02</span>
-        <h3>Creamos tu web</h3>
-        <p>Diseñamos, escribimos los textos y la publicamos con tu dominio. La ves antes de que salga y cambias lo que quieras.</p>
+
+      <div class="sector-card rv">
+        <div class="sector-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+        <h3>Peluquería, estética y belleza</h3>
+        <p>Cita online 24/7, tu galería de trabajos y clientas que repiten porque reservar es solo un clic.</p>
+        <ul class="sector-tags"><li>Cita online</li><li>Galería de trabajos</li><li>Recordatorios</li><li>Reseñas</li></ul>
       </div>
-      <div class="step rv">
-        <span class="step-num">/03</span>
-        <h3>Nos ocupamos de todo</h3>
-        <p>Cambios, dominio, seguridad, contenido. Si algo falla, lo arreglamos el mismo día. Tú no tocas nada.</p>
+
+      <div class="sector-card rv">
+        <div class="sector-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Talleres, reformas y oficios</h3>
+        <p>Que te encuentren cuando buscan tu servicio en tu zona y te pidan presupuesto sin perderse por el camino.</p>
+        <ul class="sector-tags"><li>Presupuesto rápido</li><li>Zona de trabajo</li><li>Antes / después</li><li>Google Maps</li></ul>
       </div>
+
+      <div class="sector-card rv">
+        <div class="sector-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Clínicas, salud y despachos</h3>
+        <p>Una web que transmite confianza a la primera, con tus servicios claros y la cita a un solo paso.</p>
+        <ul class="sector-tags"><li>Cita / contacto</li><li>Servicios claros</li><li>Equipo</li><li>Confianza</li></ul>
+      </div>
+
     </div>
+    <p class="sector-more rv">¿Tu sector no está en la lista? <a href="https://wa.me/34684798648?text=Hola%2C%20mi%20negocio%20es%20de..." target="_blank" rel="noopener">Cuéntanoslo por WhatsApp</a> y te decimos cómo enfocaríamos tu web.</p>
   </div>
 </section>
 
