@@ -376,26 +376,67 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
 
 <header class="hero">
   <div class="hero-glow"></div>
-  <div class="wrap hero-c">
-    <span class="eyebrow">Te conocemos · Gran Canaria</span>
-    <h1 style="margin-top:16px">No hacemos webs genéricas. <span class="hl">Hacemos la de tu sector.</span></h1>
-    <p class="sub">Un restaurante no necesita lo mismo que una peluquería, ni un taller lo mismo que una clínica. Escuchamos cómo funciona tu negocio y montamos la web —y las herramientas— alrededor de lo que de verdad te trae clientes.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-wa" href="https://wa.me/34684798648" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-      <a class="btn btn-ghost" href="#sectores">Ver sectores</a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Te conocemos · Gran Canaria</span>
+      <h1 style="margin-top:16px">No hacemos webs genéricas. <span class="hl">Hacemos la de tu sector.</span></h1>
+      <p class="sub">Un restaurante no necesita lo mismo que una peluquería, ni un taller lo mismo que una clínica. Escuchamos cómo funciona tu negocio y montamos la web —y las herramientas— alrededor de lo que de verdad te trae clientes.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" href="https://wa.me/34684798648" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+        <a class="btn btn-ghost" href="#sectores">Ver sectores</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Hecha a tu medida</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Sin permanencia</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Respuesta el mismo día</span>
+      </div>
     </div>
-    <div class="hero-trust">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Hecha a tu medida</span>
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Sin permanencia</span>
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD23F" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Respuesta el mismo día</span>
+
+    <div class="aw" aria-hidden="true">
+      <div class="aw-win">
+        <div class="aw-bar">
+          <span class="aw-dot"></span><span class="aw-dot"></span><span class="aw-dot"></span>
+          <span class="aw-url" id="awUrl">lamarea-restaurante.es</span>
+        </div>
+        <div class="aw-body" id="awBody">
+          <div class="aw-head">
+            <div class="aw-ic" id="awIc"></div>
+            <div>
+              <div class="aw-name" id="awName">La Marea</div>
+              <div class="aw-kind" id="awKind">Restaurante · Las Palmas</div>
+            </div>
+          </div>
+          <div class="aw-h1" id="awH1">Reserva tu mesa esta noche</div>
+          <div class="aw-chips" id="awChips"></div>
+          <span class="aw-cta" id="awCta">Reservar mesa</span>
+        </div>
+      </div>
+      <div class="aw-steps" id="awSteps"><span class="on"></span><span></span><span></span><span></span></div>
+      <p class="serp-note">// la misma calidad, adaptada a cada negocio</p>
     </div>
   </div>
 </header>
 
 <style>
-.hero-c{text-align:center;max-width:780px;margin:0 auto}
-.hero-c .sub{margin-left:auto;margin-right:auto}
-.hero-c .hero-ctas,.hero-c .hero-trust{justify-content:center}
+/* hero: la web que se adapta */
+.aw{max-width:480px;margin:0 auto;width:100%}
+.aw-win{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden;opacity:0;transform:translateY(14px);animation:cardIn .6s ease .4s forwards}
+.aw-bar{display:flex;align-items:center;gap:6px;padding:11px 16px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.aw-dot{width:9px;height:9px;border-radius:50%;background:rgba(237,241,247,.14)}
+.aw-url{flex:1;margin-left:10px;font-family:var(--font-mono);font-size:11.5px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 14px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aw-body{padding:24px 22px 26px;transition:opacity .3s ease,transform .3s ease}
+.aw-body.swap{opacity:0;transform:translateY(8px)}
+.aw-head{display:flex;align-items:center;gap:14px}
+.aw-ic{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex:none}
+.aw-name{font-family:var(--font-display);font-weight:800;font-size:1.05rem;line-height:1.2}
+.aw-kind{font-size:.82rem;color:var(--muted)}
+.aw-h1{font-family:var(--font-display);font-variation-settings:"wdth" 112;font-weight:800;font-size:1.35rem;line-height:1.15;margin:16px 0 14px}
+.aw-chips{display:flex;flex-wrap:wrap;gap:8px}
+.aw-chips span{font-size:.78rem;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.aw-cta{display:inline-flex;margin-top:16px;background:var(--yellow);color:#0A0E1A;font-weight:700;font-size:.85rem;border-radius:999px;padding:8px 18px}
+.aw-steps{display:flex;justify-content:center;gap:7px;margin-top:16px}
+.aw-steps span{width:7px;height:7px;border-radius:50%;background:rgba(237,241,247,.16);transition:background .3s ease,transform .3s ease}
+.aw-steps span.on{background:var(--blue);transform:scale(1.25)}
 .adapt{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
 @media(min-width:768px){.adapt{grid-template-columns:repeat(3,1fr)}}
 .adapt-step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
@@ -555,6 +596,41 @@ footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:va
     if(en[0].isIntersecting){play();io.disconnect();}
   },{threshold:.4});
   io.observe(chat);
+})();
+// hero: la web que se adapta a cada sector
+(function(){
+  var body=document.getElementById('awBody');
+  if(!body)return;
+  var url=document.getElementById('awUrl'),ic=document.getElementById('awIc'),
+      name=document.getElementById('awName'),kind=document.getElementById('awKind'),
+      h1=document.getElementById('awH1'),chips=document.getElementById('awChips'),
+      cta=document.getElementById('awCta'),steps=document.getElementById('awSteps').children;
+  var svg={
+    rest:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>',
+    belle:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
+    taller:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+    clinica:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
+  };
+  var data=[
+    {url:'lamarea-restaurante.es',ic:svg.rest,name:'La Marea',kind:'Restaurante · Las Palmas',h1:'Reserva tu mesa esta noche',chips:['Menú QR','Reservas','Reseñas ★ 4,9'],cta:'Reservar mesa'},
+    {url:'evastyle-peluqueria.es',ic:svg.belle,name:'Eva Style',kind:'Peluquería · Vecindario',h1:'Tu cita, en un clic',chips:['Cita online','Galería','Recordatorios'],cta:'Pedir cita'},
+    {url:'tallermotor-gc.es',ic:svg.taller,name:'Taller Motor GC',kind:'Taller mecánico · Telde',h1:'Tu presupuesto, sin llamadas',chips:['Presupuesto','Zona de trabajo','Google Maps'],cta:'Pedir presupuesto'},
+    {url:'clinicadentalsur.es',ic:svg.clinica,name:'Clínica Dental Sur',kind:'Clínica dental · Maspalomas',h1:'Tu cita en 30 segundos',chips:['Cita online','Servicios','Equipo'],cta:'Reservar cita'}
+  ];
+  var i=0;
+  function render(d){
+    url.textContent=d.url;ic.innerHTML=d.ic;name.textContent=d.name;kind.textContent=d.kind;
+    h1.textContent=d.h1;cta.textContent=d.cta;
+    chips.innerHTML='';
+    d.chips.forEach(function(c){var s=document.createElement('span');s.textContent=c;chips.appendChild(s)});
+    for(var k=0;k<steps.length;k++)steps[k].classList.toggle('on',k===i);
+  }
+  render(data[0]);
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  setInterval(function(){
+    body.classList.add('swap');
+    setTimeout(function(){i=(i+1)%data.length;render(data[i]);body.classList.remove('swap')},320);
+  },3400);
 })();
 // reveals al hacer scroll
 (function(){
